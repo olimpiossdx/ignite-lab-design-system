@@ -36,5 +36,5 @@ export function TextInputInput(props: ITextInputInputProps) {
 export const TextInput = {
   Root: TextInputRoot,
   Input: TextInputInput,
-  InputIcon: TextInputIcon
+  Icon: TextInputIcon
 };
