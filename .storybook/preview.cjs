@@ -1,6 +1,12 @@
 import '../src/styles/global.css';
+import { themes } from '@storybook/theming'
+import { initialize, mswDecorator } from 'msw-storybook-addon';
 
-import { themes } from '@storybook/theming';
+initialize({
+  onUnhandledRequest: 'bypass'
+});
+
+export const decorators = [mswDecorator];
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -11,6 +17,6 @@ export const parameters = {
     },
   },
   docs: {
-    theme: themes.dark
-  }
+    theme: themes.dark,
+  },
 }

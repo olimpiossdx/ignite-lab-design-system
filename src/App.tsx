@@ -1,7 +1,6 @@
 import './styles/global.css';
-
-import Signin from './pages/Signin';
+import { SignIn } from './pages/SignIn';
 
 export function App() {
-  return (<Signin />);
+  return (<SignIn />);
 };

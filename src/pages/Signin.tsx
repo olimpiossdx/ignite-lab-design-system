@@ -6,12 +6,20 @@ import { Text } from '../components/Text';
 import { TextInput } from '../components/TextInput';
 import { Logo } from '../logo';
 import { Lock, Envelope } from 'phosphor-react';
+import axios from 'axios';
 
-export function Signin() {
+export function SignIn() {
   const [isUserSignedIn, setisUserSignedIn] = useState(false);
 
-  const handleForm = (event: FormEvent) => {
+  const handleForm = async (event: FormEvent) => {
     event.preventDefault();
+
+    await axios.post('/sessions', {
+      email: 'jose@email.com.br',
+      password: '12345678',
+    })
+
+
     setisUserSignedIn(state => !state);
   }
 
